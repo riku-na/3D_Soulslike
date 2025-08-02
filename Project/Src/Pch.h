@@ -109,9 +109,9 @@
 
 // const char8_t*をconst char*として扱うマクロ(c++20から使えなくなってるので)
 #if defined(__cpp_char8_t)
-	#define U8(X) ((const char *)u8##X)
+#define U8(X) ((const char *)u8##X)
 #else
-	#define U8(x) u8##x
+#define U8(x) u8##x
 #endif
 
 //===============================================
@@ -120,3 +120,8 @@
 //
 //===============================================
 #include "Framework/KdFramework.h"
+
+#include "Application/GameObject/GameObject.h"
+#include "Application/Component/Component.h"
+#include "Application/Material/Material.h"
+#include "Application/Renderer/Renderer.h"

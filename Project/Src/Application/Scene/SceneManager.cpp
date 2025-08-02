@@ -4,56 +4,17 @@
 #include "GameScene/GameScene.h"
 #include "TitleScene/TitleScene.h"
 
-void SceneManager::PreUpdate()
-{
-	// シーン切替
-	if (m_currentSceneType != m_nextSceneType)
-	{
-		ChangeScene(m_nextSceneType);
-	}
-
-	m_currentScene->PreUpdate();
-}
-
 void SceneManager::Update()
 {
 	m_currentScene->Update();
 }
 
-void SceneManager::PostUpdate()
-{
-	m_currentScene->PostUpdate();
-}
-
-void SceneManager::PreDraw()
-{
-	m_currentScene->PreDraw();
-}
-
 void SceneManager::Draw()
 {
-	m_currentScene->Draw();
+	if (m_currentScene)m_currentScene->Draw();//描画予約
+	Renderer::Instance().DrawAll();//ソート後まとめて描画
 }
 
-void SceneManager::DrawSprite()
-{
-	m_currentScene->DrawSprite();
-}
-
-void SceneManager::DrawDebug()
-{
-	m_currentScene->DrawDebug();
-}
-
-const std::list<std::shared_ptr<KdGameObject>>& SceneManager::GetObjList()
-{
-	return m_currentScene->GetObjList();
-}
-
-void SceneManager::AddObject(const std::shared_ptr<KdGameObject>& _obj)
-{
-	m_currentScene->AddObject(_obj);
-}
 
 void SceneManager::ChangeScene(SceneType _sceneType)
 {

@@ -85,6 +85,24 @@
     <Filter Include="Src\Application\Scene\TitleScene">
       <UniqueIdentifier>{79ee70a1-187a-4dd1-8140-bdd9d69d2a00}</UniqueIdentifier>
     </Filter>
+    <Filter Include="Src\Application\Component">
+      <UniqueIdentifier>{5fde6580-7f9d-47d0-a77b-13cd7eeb727a}</UniqueIdentifier>
+    </Filter>
+    <Filter Include="Src\Application\Renderer">
+      <UniqueIdentifier>{9b062c83-ebb2-4b05-a66b-3e06bca2f7cd}</UniqueIdentifier>
+    </Filter>
+    <Filter Include="Src\Application\Component\MeshRendererComponent">
+      <UniqueIdentifier>{2e4c8753-1716-4a13-b6e9-bd62b2b48e86}</UniqueIdentifier>
+    </Filter>
+    <Filter Include="Src\Application\Material">
+      <UniqueIdentifier>{eadf9596-0363-4b63-9960-31c401f70e0c}</UniqueIdentifier>
+    </Filter>
+    <Filter Include="Src\Application\Component\IRenderableComponent">
+      <UniqueIdentifier>{09ec1b5e-e409-40a6-9f6c-71ffe223a0e4}</UniqueIdentifier>
+    </Filter>
+    <Filter Include="Src\Application\Component\TransformComponent">
+      <UniqueIdentifier>{792a7a05-6cb5-4124-9fc1-f312319d2215}</UniqueIdentifier>
+    </Filter>
   </ItemGroup>
   <ItemGroup>
     <ClInclude Include="src\Pch.h">
@@ -267,6 +285,27 @@
     <ClInclude Include="Src\Application\Scene\BaseScene\BaseScene.h">
       <Filter>Src\Application\Scene\BaseScene</Filter>
     </ClInclude>
+    <ClInclude Include="Src\Application\GameObject\GameObject.h">
+      <Filter>Src\Application\GameObject</Filter>
+    </ClInclude>
+    <ClInclude Include="Src\Application\Component\Component.h">
+      <Filter>Src\Application\Component</Filter>
+    </ClInclude>
+    <ClInclude Include="Src\Application\Renderer\Renderer.h">
+      <Filter>Src\Application\Renderer</Filter>
+    </ClInclude>
+    <ClInclude Include="Src\Application\Component\MeshRendererComponent\MeshRendererComponent.h">
+      <Filter>Src\Application\Component\MeshRendererComponent</Filter>
+    </ClInclude>
+    <ClInclude Include="Src\Application\Material\Material.h">
+      <Filter>Src\Application\Material</Filter>
+    </ClInclude>
+    <ClInclude Include="Src\Application\Component\IRenderableComponent\IRenderableComponent.h">
+      <Filter>Src\Application\Component\IRenderableComponent</Filter>
+    </ClInclude>
+    <ClInclude Include="Src\Application\Component\TransformComponent\TransformComponent.h">
+      <Filter>Src\Application\Component\TransformComponent</Filter>
+    </ClInclude>
   </ItemGroup>
   <ItemGroup>
     <ClCompile Include="src\Pch.cpp">
@@ -418,6 +457,9 @@
     </ClCompile>
     <ClCompile Include="Src\Application\Scene\SceneManager.cpp">
       <Filter>Src\Application\Scene</Filter>
+    </ClCompile>
+    <ClCompile Include="Src\Application\Component\MeshRendererComponent\MeshRendererComponent.cpp">
+      <Filter>Src\Application\Component\MeshRendererComponent</Filter>
     </ClCompile>
   </ItemGroup>
   <ItemGroup>

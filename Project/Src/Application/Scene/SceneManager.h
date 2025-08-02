@@ -4,7 +4,7 @@ class BaseScene;
 
 class SceneManager
 {
-public :
+public:
 
 	// シーン情報
 	enum class SceneType
@@ -13,14 +13,9 @@ public :
 		Game,
 	};
 
-	void PreUpdate();
 	void Update();
-	void PostUpdate();
 
-	void PreDraw();
 	void Draw();
-	void DrawSprite();
-	void DrawDebug();
 
 	// 次のシーンをセット (次のフレームから切り替わる)
 	void SetNextScene(SceneType _nextScene)
@@ -28,13 +23,7 @@ public :
 		m_nextSceneType = _nextScene;
 	}
 
-	// 現在のシーンのオブジェクトリストを取得
-	const std::list<std::shared_ptr<KdGameObject>>& GetObjList();
-
-	// 現在のシーンにオブジェクトを追加
-	void AddObject(const std::shared_ptr<KdGameObject>& _obj);
-
-private :
+private:
 
 	// マネージャーの初期化
 	// インスタンス生成(アプリ起動)時にコンストラクタで自動実行
@@ -52,7 +41,7 @@ private :
 
 	// 現在のシーンの種類を保持している変数
 	SceneType m_currentSceneType = SceneType::Game;
-	
+
 	// 次のシーンの種類を保持している変数
 	SceneType m_nextSceneType = m_currentSceneType;
 
