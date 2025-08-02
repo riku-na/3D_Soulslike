@@ -407,9 +407,6 @@
     <ClCompile Include="Src\Application\GameObject\Camera\FPSCamera\FPSCamera.cpp">
       <Filter>Src\Application\GameObject\Camera\FPSCamera</Filter>
     </ClCompile>
-    <ClCompile Include="Src\Application\Scene\SceneManager.cpp">
-      <Filter>Src\Application\Scene</Filter>
-    </ClCompile>
     <ClCompile Include="Src\Application\Scene\TitleScene\TitleScene.cpp">
       <Filter>Src\Application\Scene\TitleScene</Filter>
     </ClCompile>
@@ -418,6 +415,9 @@
     </ClCompile>
     <ClCompile Include="Src\Application\Scene\BaseScene\BaseScene.cpp">
       <Filter>Src\Application\Scene\BaseScene</Filter>
+    </ClCompile>
+    <ClCompile Include="Src\Application\Scene\SceneManager.cpp">
+      <Filter>Src\Application\Scene</Filter>
     </ClCompile>
   </ItemGroup>
   <ItemGroup>
