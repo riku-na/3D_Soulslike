@@ -239,9 +239,9 @@ void KdStandardShader::DrawModel(KdModelWork& rModel, const Math::Matrix& mWorld
 
 			// ボーン情報からGPUに渡す行列の計算
 			m_cb3_Bone.Work().mBones[dataNode.m_boneIndex] = dataNode.m_boneInverseWorldMatrix * workNode.m_worldTransform;
-
-			m_cb3_Bone.Write();
 		}
+
+		m_cb3_Bone.Write();
 	}
 
 

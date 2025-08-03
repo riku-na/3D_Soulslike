@@ -103,6 +103,12 @@
     <Filter Include="Src\Application\Component\TransformComponent">
       <UniqueIdentifier>{792a7a05-6cb5-4124-9fc1-f312319d2215}</UniqueIdentifier>
     </Filter>
+    <Filter Include="Src\Application\Component\SkinnedMeshRendererComponent">
+      <UniqueIdentifier>{47a4a927-a94c-411d-b146-3b25e7c32c6e}</UniqueIdentifier>
+    </Filter>
+    <Filter Include="Src\Application\Component\AnimatorComponent">
+      <UniqueIdentifier>{7f62610e-81bf-44a7-894f-ff13c846f7e8}</UniqueIdentifier>
+    </Filter>
   </ItemGroup>
   <ItemGroup>
     <ClInclude Include="src\Pch.h">
@@ -306,6 +312,12 @@
     <ClInclude Include="Src\Application\Component\TransformComponent\TransformComponent.h">
       <Filter>Src\Application\Component\TransformComponent</Filter>
     </ClInclude>
+    <ClInclude Include="Src\Application\Component\SkinnedMeshRendererComponent\SkinnedMeshRendererComponent.h">
+      <Filter>Src\Application\Component\SkinnedMeshRendererComponent</Filter>
+    </ClInclude>
+    <ClInclude Include="Src\Application\Component\AnimatorComponent\AnimatorComponent.h">
+      <Filter>Src\Application\Component\AnimatorComponent</Filter>
+    </ClInclude>
   </ItemGroup>
   <ItemGroup>
     <ClCompile Include="src\Pch.cpp">
@@ -460,6 +472,12 @@
     </ClCompile>
     <ClCompile Include="Src\Application\Component\MeshRendererComponent\MeshRendererComponent.cpp">
       <Filter>Src\Application\Component\MeshRendererComponent</Filter>
+    </ClCompile>
+    <ClCompile Include="Src\Application\Component\SkinnedMeshRendererComponent\SkinnedMeshRendererComponent.cpp">
+      <Filter>Src\Application\Component\SkinnedMeshRendererComponent</Filter>
+    </ClCompile>
+    <ClCompile Include="Src\Application\Component\AnimatorComponent\AnimatorComponent.cpp">
+      <Filter>Src\Application\Component\AnimatorComponent</Filter>
     </ClCompile>
   </ItemGroup>
   <ItemGroup>

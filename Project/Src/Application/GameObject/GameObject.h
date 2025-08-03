@@ -21,7 +21,7 @@ public:
 
 	void Update()
 	{
-		for (auto& c : m_components)c->Init();
+		for (auto& c : m_components)c->Update();
 	}
 
 	void Draw()

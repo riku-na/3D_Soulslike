@@ -1,8 +1,10 @@
 ﻿#include "GameScene.h"
 #include"../SceneManager.h"
 
-
 #include "../../Component/TransformComponent/TransformComponent.h"
+#include "../../Component/MeshRendererComponent/MeshRendererComponent.h"
+#include "../../Component/SkinnedMeshRendererComponent/SkinnedMeshRendererComponent.h"
+#include "../../Component/AnimatorComponent/AnimatorComponent.h"
 
 void GameScene::Event()
 {
@@ -29,4 +31,16 @@ void GameScene::Init()
 	auto planeMeshRenderer = plane->AddComponent<MeshRendererComponent>();
 	planeMeshRenderer->Load("Asset/Models/Plane/Plane.gltf");
 	AddObject(plane);
+
+	auto knight = std::make_shared<GameObject>();
+
+	knight->AddComponent<TransformComponent>();
+	auto knightMesh = knight->AddComponent<SkinnedMeshRendererComponent>();
+	auto knightAnim = knight->AddComponent<AnimatorComponent>();
+
+	knightMesh->Load("Asset/Models/test/Knight.gltf");
+	knightAnim->SetTargetModel(knightMesh->GetModelWork());
+	knightAnim->SetAnimation("Idle", true);
+
+	AddObject(knight);
 }

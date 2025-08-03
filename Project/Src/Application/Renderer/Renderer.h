@@ -1,5 +1,5 @@
 ﻿#pragma once
-#include "../Component/MeshRendererComponent/MeshRendererComponent.h"
+#include "../Component/IRenderableComponent/IRenderableComponent.h"
 
 struct RenderCommand
 {

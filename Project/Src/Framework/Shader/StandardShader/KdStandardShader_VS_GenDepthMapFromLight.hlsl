@@ -11,7 +11,7 @@ VSOutputGenShadow main(
 	float3 normal : NORMAL, // 法線
 	float3 tangent : TANGENT,
 	uint4 skinIndex : SKININDEX,
-	float4 skinWeight : SKINWEIGHT)	// 接線
+	float4 skinWeight : SKINWEIGHT)
 {
 	// スキニング---------------->
 	if (g_IsSkinMeshObj)

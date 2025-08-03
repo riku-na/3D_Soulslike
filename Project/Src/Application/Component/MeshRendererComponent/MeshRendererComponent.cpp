@@ -11,9 +11,7 @@ void MeshRendererComponent::Load(const std::string& _path)
 
 void MeshRendererComponent::Draw()
 {
-
 	Renderer::Instance().AddRenderCommand(this, &m_material);
-
 }
 
 void MeshRendererComponent::DrawWithMaterial(Material* mat)
