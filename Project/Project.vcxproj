@@ -277,6 +277,7 @@
     <ClInclude Include="Src\Application\Component\Component.h" />
     <ClInclude Include="Src\Application\Component\IRenderableComponent\IRenderableComponent.h" />
     <ClInclude Include="Src\Application\Component\MeshRendererComponent\MeshRendererComponent.h" />
+    <ClInclude Include="Src\Application\Component\PlayerComponent\PlayerComponent.h" />
     <ClInclude Include="Src\Application\Component\SkinnedMeshRendererComponent\SkinnedMeshRendererComponent.h" />
     <ClInclude Include="Src\Application\Component\TransformComponent\TransformComponent.h" />
     <ClInclude Include="Src\Application\GameObject\Camera\CameraBase.h" />

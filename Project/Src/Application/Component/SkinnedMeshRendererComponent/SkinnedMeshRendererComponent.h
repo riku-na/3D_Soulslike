@@ -9,8 +9,6 @@ public:
 
 	void Load(const std::string& _path);
 
-	void Update()override;
-
 	void Draw()override;
 
 	void DrawWithMaterial(Material* mat)override;
@@ -21,6 +19,6 @@ public:
 private:
 	Material m_material;
 	std::shared_ptr<KdModelWork> m_model;
-	KdAnimator m_animator;
+
 	bool m_castShadows = true;
 };

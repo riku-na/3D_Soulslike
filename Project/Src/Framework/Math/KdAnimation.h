@@ -62,6 +62,8 @@ public:
 		if (m_spAnimation == nullptr) { return true; }
 		if (m_time >= m_spAnimation->m_maxLength) { return true; }
 
+
+
 		return false;
 	}
 

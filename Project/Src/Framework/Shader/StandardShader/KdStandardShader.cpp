@@ -31,6 +31,7 @@ void KdStandardShader::BeginLit()
 		KdShaderManager::Instance().SetPSConstantBuffer(2, m_cb2_Material.GetAddress());
 	}
 
+	//ボーン情報をセット
 	KdShaderManager::Instance().SetVSConstantBuffer(3, m_cb3_Bone.GetAddress());
 
 	// シャドウマップのテクスチャをセット
@@ -68,8 +69,6 @@ void KdStandardShader::BeginUnLit()
 
 		KdShaderManager::Instance().SetVSConstantBuffer(0, m_cb0_Obj.GetAddress());
 		KdShaderManager::Instance().SetVSConstantBuffer(1, m_cb1_Mesh.GetAddress());
-
-		KdShaderManager::Instance().SetVSConstantBuffer(3, m_cb3_Bone.GetAddress());
 	}
 
 	if (KdShaderManager::Instance().SetPixelShader(m_PS_UnLit))
@@ -101,9 +100,10 @@ void KdStandardShader::BeginGenerateDepthMapFromLight()
 
 		KdShaderManager::Instance().SetVSConstantBuffer(0, m_cb0_Obj.GetAddress());
 		KdShaderManager::Instance().SetVSConstantBuffer(1, m_cb1_Mesh.GetAddress());
-
-		KdShaderManager::Instance().SetVSConstantBuffer(3, m_cb3_Bone.GetAddress());
 	}
+
+	//ボーン情報をセット
+	KdShaderManager::Instance().SetVSConstantBuffer(3, m_cb3_Bone.GetAddress());
 
 	if (KdShaderManager::Instance().SetPixelShader(m_PS_GenDepthFromLight))
 	{
@@ -215,19 +215,19 @@ void KdStandardShader::DrawModel(KdModelWork& rModel, const Math::Matrix& mWorld
 		rModel.CalcNodeMatrices();
 	}
 
+	SetIsSkinMeshObj(data->IsSkinMesh());
+
 	// オブジェクト単位の情報転送
 	if (m_dirtyCBObj)
 	{
 		m_cb0_Obj.Write();
 	}
 
-	SetIsSkinMeshObj(data->IsSkinMesh());
-
 	auto& workNodes = rModel.GetNodes();
 	auto& dataNodes = data->GetOriginalNodes();
 
 	//スキンメッシュモデルの場合 : ボーン情報を書き込み
-	if (data->IsSkinMesh())
+	//if (data->IsSkinMesh())
 	{
 		// ノード内からボーン情報を取得
 		for (auto&& nodeIdx : data->GetBoneNodeIndices())
@@ -239,11 +239,10 @@ void KdStandardShader::DrawModel(KdModelWork& rModel, const Math::Matrix& mWorld
 
 			// ボーン情報からGPUに渡す行列の計算
 			m_cb3_Bone.Work().mBones[dataNode.m_boneIndex] = dataNode.m_boneInverseWorldMatrix * workNode.m_worldTransform;
+
+			m_cb3_Bone.Write();
 		}
-
-		m_cb3_Bone.Write();
 	}
-
 
 	// 全描画用メッシュノードを描画
 	for (auto& nodeIdx : data->GetDrawMeshNodeIndices())
@@ -405,7 +404,7 @@ void KdStandardShader::DrawVertices(const std::vector<KdPolygon::Vertex>& vertic
 bool KdStandardShader::Init()
 {
 	//-------------------------------------
-	// 頂点シェーダ
+	// 頂点シェーダ(スキンメッシュ対応)
 	//-------------------------------------
 	{
 		// コンパイル済みのシェーダーヘッダーファイルをインクルード
@@ -432,7 +431,7 @@ bool KdStandardShader::Init()
 		// 頂点入力レイアウト作成
 		if (FAILED(KdDirect3D::Instance().WorkDev()->CreateInputLayout(
 			&layout[0],				// 入力エレメント先頭アドレス
-			(UINT)layout.size(),	// 入力エレメント数
+			layout.size(),			// 入力エレメント数
 			&compiledBuffer[0],		// 頂点バッファのバイナリデータ
 			sizeof(compiledBuffer),	// 上記のバッファサイズ
 			&m_inputLayout))

@@ -109,6 +109,9 @@
     <Filter Include="Src\Application\Component\AnimatorComponent">
       <UniqueIdentifier>{7f62610e-81bf-44a7-894f-ff13c846f7e8}</UniqueIdentifier>
     </Filter>
+    <Filter Include="Src\Application\Component\PlayerComponent">
+      <UniqueIdentifier>{ca677e65-f5d1-4c4d-8023-0db9134f0575}</UniqueIdentifier>
+    </Filter>
   </ItemGroup>
   <ItemGroup>
     <ClInclude Include="src\Pch.h">
@@ -317,6 +320,9 @@
     </ClInclude>
     <ClInclude Include="Src\Application\Component\AnimatorComponent\AnimatorComponent.h">
       <Filter>Src\Application\Component\AnimatorComponent</Filter>
+    </ClInclude>
+    <ClInclude Include="Src\Application\Component\PlayerComponent\PlayerComponent.h">
+      <Filter>Src\Application\Component\PlayerComponent</Filter>
     </ClInclude>
   </ItemGroup>
   <ItemGroup>

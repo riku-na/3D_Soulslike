@@ -12,15 +12,6 @@ void SkinnedMeshRendererComponent::Load(const std::string& _path)
 	m_model->SetModelData(_path);
 
 	m_material.m_shaderType = ShaderType::Lit;
-
-	//////////////////
-	m_animator.SetAnimation(m_model->GetAnimation("Walk"));
-}
-
-void SkinnedMeshRendererComponent::Update()
-{
-	m_animator.AdvanceTime(m_model->WorkNodes());
-	m_model->CalcNodeMatrices();
 }
 
 void SkinnedMeshRendererComponent::Draw()

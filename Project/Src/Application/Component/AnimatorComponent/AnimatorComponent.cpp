@@ -5,8 +5,6 @@ void AnimatorComponent::Update()
 	if (auto model = m_wpModelWork.lock())
 	{
 		m_animator.AdvanceTime(model->WorkNodes(), m_speed);
-
-		model->CalcNodeMatrices();
 	}
 }
 

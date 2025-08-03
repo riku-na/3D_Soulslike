@@ -9,9 +9,10 @@ VSOutputGenShadow main(
 	float2 uv : TEXCOORD0, // テクスチャUV座標
 	float4 color : COLOR, // 頂点カラー
 	float3 normal : NORMAL, // 法線
-	float3 tangent : TANGENT,
-	uint4 skinIndex : SKININDEX,
-	float4 skinWeight : SKINWEIGHT)
+	float3 tangent : TANGENT, // 接線
+	uint4 skinIndex : SKININDEX, //スキンメッシュのボーンインデックス(何番目のボーンに影響しているか？(最大4つ))
+	float4 skinWeight : SKINWEIGHT //ボーンの影響度
+)
 {
 	// スキニング---------------->
 	if (g_IsSkinMeshObj)
@@ -47,5 +48,6 @@ VSOutputGenShadow main(
 	Out.Color = color;
 
 	// 出力
-	return Out;
+	return
+	Out;
 }
