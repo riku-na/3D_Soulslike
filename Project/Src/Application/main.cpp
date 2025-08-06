@@ -198,6 +198,9 @@ bool Application::Init(int w, int h)
 	//===================================================================
 	KdAudioManager::Instance().Init();
 
+
+	input::InputManager::Instance().Init(m_window.GetWndHandle());
+
 	return true;
 }
 
@@ -250,14 +253,17 @@ void Application::Execute()
 			break;
 		}
 
-		if (GetAsyncKeyState(VK_ESCAPE))
-		{
-			//			if (MessageBoxA(m_window.GetWndHandle(), "本当にゲームを終了しますか？",
-			//				"終了確認", MB_YESNO | MB_ICONQUESTION | MB_DEFBUTTON2) == IDYES)
-			{
-				End();
-			}
-		}
+		//if (input::IsKeyTriggered(VK_ESCAPE) && input::InputManager::Instance().GetIsLockedMouse())
+		//{
+		//	//			if (MessageBoxA(m_window.GetWndHandle(), "本当にゲームを終了しますか？",
+		//	//				"終了確認", MB_YESNO | MB_ICONQUESTION | MB_DEFBUTTON2) == IDYES)
+		//	{
+		//		End();
+		//	}
+		//}
+
+		deltatime::DeltaTimeManager::Instance().Update();
+		input::InputManager::Instance().Update();
 
 		//=========================================
 		//

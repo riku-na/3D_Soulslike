@@ -13,8 +13,6 @@ CameraComponent::CameraComponent()
 	m_localPos = Math::Matrix::CreateTranslation(0, 1.5f, -5.0f);
 
 	// 初期マウス位置を取得して保存
-	GetCursorPos(&m_fixMousePos);
-	SetCursorPos(m_fixMousePos.x, m_fixMousePos.y);
 
 	//スカイボックス
 	KdShaderManager::Instance().m_skyboxShader.LoadCubeMap(L"Asset/Textures/Skybox/Cube_xyFlipped.dds");
@@ -47,14 +45,8 @@ void CameraComponent::PreDraw()
 void CameraComponent::UpdateRotateByMouse()
 {
 	// マウスでカメラを回転させる処理
-	POINT _nowPos;
-	GetCursorPos(&_nowPos);
+	DirectX::XMFLOAT2 _mouseMove = input::GetMouseDelta();
 
-	POINT _mouseMove{};
-	_mouseMove.x = _nowPos.x - m_fixMousePos.x;
-	_mouseMove.y = _nowPos.y - m_fixMousePos.y;
-
-	SetCursorPos(m_fixMousePos.x, m_fixMousePos.y);
 
 	// 実際にカメラを回転させる処理(0.15はただの補正値)
 	m_DegAng.x += _mouseMove.y * 0.15f;

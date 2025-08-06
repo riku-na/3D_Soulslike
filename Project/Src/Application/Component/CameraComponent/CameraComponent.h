@@ -22,7 +22,6 @@ private:
 
 	std::weak_ptr<TransformComponent> m_targetTransform;
 
-	POINT	m_fixMousePos{};
 	Math::Vector3	m_DegAng = Math::Vector3::Zero;
 	void UpdateRotateByMouse();
 	const Math::Matrix GetRotationMatrix()const;

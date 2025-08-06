@@ -118,6 +118,9 @@
     <Filter Include="Src\Framework\Shader\SkyboxShader">
       <UniqueIdentifier>{189f38ea-a2d3-4414-950c-99c7155a3ab1}</UniqueIdentifier>
     </Filter>
+    <Filter Include="Src\Application\Utility">
+      <UniqueIdentifier>{79f2481e-6096-4cb3-b8c7-5fa47f739034}</UniqueIdentifier>
+    </Filter>
   </ItemGroup>
   <ItemGroup>
     <ClInclude Include="src\Pch.h">
@@ -335,6 +338,15 @@
     </ClInclude>
     <ClInclude Include="Src\Framework\Shader\SkyBoxShader\SkyboxShader.h">
       <Filter>Src\Framework\Shader\SkyboxShader</Filter>
+    </ClInclude>
+    <ClInclude Include="Src\Application\Utility\DeltaTimeManager.h">
+      <Filter>Src\Application\Utility</Filter>
+    </ClInclude>
+    <ClInclude Include="Src\Application\Utility\InputManager.h">
+      <Filter>Src\Application\Utility</Filter>
+    </ClInclude>
+    <ClInclude Include="Src\Application\Utility\Utility.h">
+      <Filter>Src\Application\Utility</Filter>
     </ClInclude>
   </ItemGroup>
   <ItemGroup>

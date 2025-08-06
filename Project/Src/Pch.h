@@ -125,3 +125,8 @@
 #include "Application/Component/Component.h"
 #include "Application/Material/Material.h"
 #include "Application/Renderer/Renderer.h"
+
+//Utility
+#include "Application/Utility/Utility.h"
+#include "Application/Utility/DeltaTimeManager.h"
+#include "Application/Utility/InputManager.h"
