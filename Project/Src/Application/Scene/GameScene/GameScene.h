@@ -10,7 +10,6 @@ public:
 	~GameScene() {}
 
 private:
-	std::shared_ptr<KdCamera> m_camera;
 
 	void Event() override;
 	void Init()  override;

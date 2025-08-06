@@ -5,6 +5,8 @@
 #include "../../Component/MeshRendererComponent/MeshRendererComponent.h"
 #include "../../Component/SkinnedMeshRendererComponent/SkinnedMeshRendererComponent.h"
 #include "../../Component/AnimatorComponent/AnimatorComponent.h"
+#include "../../Component/CameraComponent/CameraComponent.h"
+#include "../../Component/PlayerComponent/PlayerComponent.h"
 
 void GameScene::Event()
 {
@@ -16,15 +18,10 @@ void GameScene::Event()
 		);
 	}
 
-	m_camera->SetToShader();
 }
 
 void GameScene::Init()
 {
-	//カメラ
-	m_camera = std::make_shared<KdCamera>();
-	m_camera->SetCameraMatrix(Math::Matrix::CreateRotationX(DirectX::XMConvertToRadians(15)) * Math::Matrix::CreateTranslation(0, 3, -5));
-
 	//オブジェクト
 	auto plane = std::make_shared<GameObject>();
 	plane->AddComponent<TransformComponent>();
@@ -34,13 +31,24 @@ void GameScene::Init()
 
 	auto knight = std::make_shared<GameObject>();
 
-	knight->AddComponent<TransformComponent>();
+	auto knightTrans = knight->AddComponent<TransformComponent>();
+	//knightTrans->SetPosition({ 2, 0, 1 });
 	auto knightMesh = knight->AddComponent<SkinnedMeshRendererComponent>();
 	auto knightAnim = knight->AddComponent<AnimatorComponent>();
+	auto knightPlayer = knight->AddComponent<PlayerComponent>();
+
+	knightPlayer->SetTransForm(knightTrans);
 
 	knightMesh->Load("Asset/Models/test/Knight.gltf");
 	knightAnim->SetTargetModel(knightMesh->GetModelWork());
 	knightAnim->SetAnimation("Idle", true);
 
 	AddObject(knight);
+
+	//カメラ
+	auto camera = std::make_shared<GameObject>();
+	auto cameraComponent = camera->AddComponent<CameraComponent>();
+	cameraComponent->SetTarget(knightTrans);
+	AddObject(camera);
+
 }

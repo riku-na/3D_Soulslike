@@ -112,6 +112,9 @@
     <Filter Include="Src\Application\Component\PlayerComponent">
       <UniqueIdentifier>{ca677e65-f5d1-4c4d-8023-0db9134f0575}</UniqueIdentifier>
     </Filter>
+    <Filter Include="Src\Application\Component\CameraComponent">
+      <UniqueIdentifier>{4b753493-e66a-4286-9a00-bdaa6dd509b3}</UniqueIdentifier>
+    </Filter>
   </ItemGroup>
   <ItemGroup>
     <ClInclude Include="src\Pch.h">
@@ -324,6 +327,9 @@
     <ClInclude Include="Src\Application\Component\PlayerComponent\PlayerComponent.h">
       <Filter>Src\Application\Component\PlayerComponent</Filter>
     </ClInclude>
+    <ClInclude Include="Src\Application\Component\CameraComponent\CameraComponent.h">
+      <Filter>Src\Application\Component\CameraComponent</Filter>
+    </ClInclude>
   </ItemGroup>
   <ItemGroup>
     <ClCompile Include="src\Pch.cpp">
@@ -484,6 +490,12 @@
     </ClCompile>
     <ClCompile Include="Src\Application\Component\AnimatorComponent\AnimatorComponent.cpp">
       <Filter>Src\Application\Component\AnimatorComponent</Filter>
+    </ClCompile>
+    <ClCompile Include="Src\Application\Component\CameraComponent\CameraComponent.cpp">
+      <Filter>Src\Application\Component\CameraComponent</Filter>
+    </ClCompile>
+    <ClCompile Include="Src\Application\Component\PlayerComponent\PlayerComponent.cpp">
+      <Filter>Src\Application\Component\PlayerComponent</Filter>
     </ClCompile>
   </ItemGroup>
   <ItemGroup>

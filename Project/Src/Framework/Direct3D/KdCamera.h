@@ -19,6 +19,7 @@ public:
 
 	// カメラ行列の設定・カメラ行列からビュー行列を生成
 	virtual void SetCameraMatrix(const DirectX::SimpleMath::Matrix& mCam) { m_mCam = mCam; m_mView = m_mCam.Invert(); }
+	virtual void SetCameraViewMatrix(const DirectX::SimpleMath::Matrix& mViewCam) { m_mView = mViewCam; m_mCam = mViewCam.Invert(); }
 
 	// 射影行列の設定
 	void SetProjectionMatrix(float fov, float maxRange = 2000, float minRange = 0.01f, float aspectRatio = 0.0f);
@@ -38,7 +39,7 @@ public:
 
 	// クライアント座標（2D）から3Dワールド座標を求める用のレイ情報を生成
 	void GenerateRayInfoFromClientPos(const POINT& clientPos, Math::Vector3& rayPos, Math::Vector3& rayDir, float& rayRange);
-	
+
 	// ワールド座標(3D座標)をスクリーン座標(2D座標)に変換する
 	void ConvertWorldToScreenDetail(const Math::Vector3& pos, Math::Vector3& result);
 
