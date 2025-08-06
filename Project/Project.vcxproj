@@ -314,6 +314,7 @@
     <ClInclude Include="Src\Framework\Math\KdUVAnimation.h" />
     <ClInclude Include="Src\Framework\Shader\KdAmbientController.h" />
     <ClInclude Include="Src\Framework\Shader\KdRenderTargetChange.h" />
+    <ClInclude Include="Src\Framework\Shader\SkyBoxShader\SkyboxShader.h" />
     <ClInclude Include="Src\Framework\Shader\StandardShader\KdStandardShader.h" />
     <ClInclude Include="Src\Framework\Utility\Debug\KdDebugGUI.h" />
     <ClInclude Include="Src\Framework\Utility\Debug\KdDebugWireFrame.h" />
@@ -376,6 +377,7 @@
     <ClCompile Include="Src\Framework\Math\KdUVAnimation.cpp" />
     <ClCompile Include="Src\Framework\Shader\KdAmbientController.cpp" />
     <ClCompile Include="Src\Framework\Shader\KdRenderTargetChange.cpp" />
+    <ClCompile Include="Src\Framework\Shader\SkyBoxShader\SkyboxShader.cpp" />
     <ClCompile Include="Src\Framework\Shader\StandardShader\KdStandardShader.cpp" />
     <ClCompile Include="Src\Framework\Utility\Debug\KdDebugGUI.cpp" />
     <ClCompile Include="Src\Framework\Utility\Debug\KdDebugWireFrame.cpp" />

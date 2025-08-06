@@ -15,6 +15,9 @@ CameraComponent::CameraComponent()
 	// 初期マウス位置を取得して保存
 	GetCursorPos(&m_fixMousePos);
 	SetCursorPos(m_fixMousePos.x, m_fixMousePos.y);
+
+	//スカイボックス
+	KdShaderManager::Instance().m_skyboxShader.LoadCubeMap(L"Asset/Textures/Skybox/Cube_xyFlipped.dds");
 }
 
 void CameraComponent::Update()
@@ -33,8 +36,12 @@ void CameraComponent::Update()
 
 	Math::Matrix mat = m_localPos * m_rotation * targetMat;
 	m_camera->SetCameraMatrix(mat);
+}
 
+void CameraComponent::PreDraw()
+{
 	m_camera->SetToShader();
+	KdShaderManager::Instance().m_skyboxShader.Draw(m_camera->GetCameraViewMatrix(), m_camera->GetProjMatrix());
 }
 
 void CameraComponent::UpdateRotateByMouse()

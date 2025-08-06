@@ -115,6 +115,9 @@
     <Filter Include="Src\Application\Component\CameraComponent">
       <UniqueIdentifier>{4b753493-e66a-4286-9a00-bdaa6dd509b3}</UniqueIdentifier>
     </Filter>
+    <Filter Include="Src\Framework\Shader\SkyboxShader">
+      <UniqueIdentifier>{189f38ea-a2d3-4414-950c-99c7155a3ab1}</UniqueIdentifier>
+    </Filter>
   </ItemGroup>
   <ItemGroup>
     <ClInclude Include="src\Pch.h">
@@ -330,6 +333,9 @@
     <ClInclude Include="Src\Application\Component\CameraComponent\CameraComponent.h">
       <Filter>Src\Application\Component\CameraComponent</Filter>
     </ClInclude>
+    <ClInclude Include="Src\Framework\Shader\SkyBoxShader\SkyboxShader.h">
+      <Filter>Src\Framework\Shader\SkyboxShader</Filter>
+    </ClInclude>
   </ItemGroup>
   <ItemGroup>
     <ClCompile Include="src\Pch.cpp">
@@ -496,6 +502,9 @@
     </ClCompile>
     <ClCompile Include="Src\Application\Component\PlayerComponent\PlayerComponent.cpp">
       <Filter>Src\Application\Component\PlayerComponent</Filter>
+    </ClCompile>
+    <ClCompile Include="Src\Framework\Shader\SkyBoxShader\SkyboxShader.cpp">
+      <Filter>Src\Framework\Shader\SkyboxShader</Filter>
     </ClCompile>
   </ItemGroup>
   <ItemGroup>

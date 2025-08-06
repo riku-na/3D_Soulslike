@@ -19,6 +19,11 @@ public:
 		for (auto& c : m_components)c->Init();
 	}
 
+	void PreDraw()
+	{
+		for (auto& c : m_components)c->PreDraw();
+	}
+
 	void Update()
 	{
 		for (auto& c : m_components)c->Update();

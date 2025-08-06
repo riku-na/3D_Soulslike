@@ -29,6 +29,7 @@ void BaseScene::Update()
 
 void BaseScene::Draw()
 {
+	for (auto& obj : m_objList)obj->PreDraw();
 	for (auto& obj : m_objList)obj->Draw();
 }
 

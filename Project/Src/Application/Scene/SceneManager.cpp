@@ -11,6 +11,8 @@ void SceneManager::Update()
 
 void SceneManager::Draw()
 {
+	//KdShaderManager::Instance().m_skyboxShader.Draw();
+
 	if (m_currentScene)m_currentScene->Draw();//描画予約
 	Renderer::Instance().DrawAll();//ソート後まとめて描画
 }

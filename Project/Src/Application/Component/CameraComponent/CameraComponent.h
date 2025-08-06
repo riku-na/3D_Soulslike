@@ -9,6 +9,7 @@ public:
 	virtual ~CameraComponent() = default;
 
 	void Update()override;
+	void PreDraw()override;
 
 	void SetTarget(std::weak_ptr<TransformComponent> _target) { m_targetTransform = _target; }
 

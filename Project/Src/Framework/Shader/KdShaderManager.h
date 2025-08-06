@@ -3,13 +3,15 @@
 #include "StandardShader/KdStandardShader.h"
 #include "PostProcessShader/KdPostProcessShader.h"
 #include "SpriteShader/KdSpriteShader.h"
+#include "SkyBoxShader/SkyboxShader.h"
 
 // 点光源データ
 struct PointLight
 {
 	PointLight() {}
 	PointLight(const Math::Vector3& color, float radius, const Math::Vector3& pos, int isBright)
-		:Color(color), Radius(radius), Pos(pos), IsBright(isBright) {}
+		:Color(color), Radius(radius), Pos(pos), IsBright(isBright) {
+	}
 
 	Math::Vector3 Color;	// 色
 	float	Radius = 0.0f;	// 半径
@@ -139,6 +141,8 @@ public:
 	KdPostProcessShader		m_postProcessShader;	// ポストプロセスシェーダ
 	KdSpriteShader			m_spriteShader;			// 2Dテクスチャ描画シェーダ
 
+	SkyboxShader m_skyboxShader;
+
 	//==========================
 	//
 	// 描画パイプライン系の設定
@@ -209,6 +213,13 @@ public:
 	const KdAmbientController& GetAmbientController() const { return m_ambientController; }
 	KdAmbientController& WorkAmbientController() { return m_ambientController; }
 
+	static bool CompileShader(const std::wstring& filePath, const std::string& entryPoint, const std::string& shaderModel,
+		ID3D11VertexShader** vs, ID3D11InputLayout** inputLayout = nullptr,
+		const D3D11_INPUT_ELEMENT_DESC* layoutDesc = nullptr, UINT layoutCount = 0);
+
+	static bool CompileShader(const std::wstring& filePath, const std::string& entryPoint, const std::string& shaderModel,
+		ID3D11PixelShader** ps);
+
 	// 解放
 	void Release();
 
@@ -236,7 +247,7 @@ private:
 	// パイプラインステート
 	//
 	//==========================
-	 
+
 	//深度ステンシル（奥行情報の使い方・手前にあるものを無視して描画したりできる
 	ID3D11DepthStencilState* m_depthStencilStates[(int)KdDepthStencilState::Max] = {};
 	std::stack<ID3D11DepthStencilState*> m_ds_Undo;

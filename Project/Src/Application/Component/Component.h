@@ -7,6 +7,7 @@ class Component
 public:
 	virtual void Init() {}
 	virtual void Update() {}
+	virtual void PreDraw() {}
 	virtual void Draw() {}
 	virtual ~Component() {}
 

@@ -22,6 +22,8 @@ void GameScene::Event()
 
 void GameScene::Init()
 {
+
+
 	//オブジェクト
 	auto plane = std::make_shared<GameObject>();
 	plane->AddComponent<TransformComponent>();
