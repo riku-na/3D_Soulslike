@@ -22,6 +22,7 @@ public:
 		m_wpModelWork = _wpModelWork;
 	}
 
+	KdAnimator& GetAnimator() { return m_animator; }
 private:
 	float m_speed = 1.0f;
 

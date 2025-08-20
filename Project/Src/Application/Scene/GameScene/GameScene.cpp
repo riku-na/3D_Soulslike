@@ -34,23 +34,23 @@ void GameScene::Init()
 	auto knight = std::make_shared<GameObject>();
 
 	auto knightTrans = knight->AddComponent<TransformComponent>();
-	//knightTrans->SetPosition({ 2, 0, 1 });
 	auto knightMesh = knight->AddComponent<SkinnedMeshRendererComponent>();
 	auto knightAnim = knight->AddComponent<AnimatorComponent>();
 	auto knightPlayer = knight->AddComponent<PlayerComponent>();
+	auto knightStateMachine = knight->AddComponent<StateMachineComponent>();
 
-	knightPlayer->SetTransForm(knightTrans);
-
-	knightMesh->Load("Asset/Models/test/Knight.gltf");
+	knightMesh->Load("Asset/Models/Knight/Knight.gltf");
 	knightAnim->SetTargetModel(knightMesh->GetModelWork());
 	knightAnim->SetAnimation("Idle", true);
 
 	AddObject(knight);
-
 	//カメラ
 	auto camera = std::make_shared<GameObject>();
 	auto cameraComponent = camera->AddComponent<CameraComponent>();
 	cameraComponent->SetTarget(knightTrans);
 	AddObject(camera);
 
+
+	knightPlayer->SetComponents(knightTrans, cameraComponent, knightAnim, knightStateMachine);
+	knightPlayer->InitStateMachine();
 }

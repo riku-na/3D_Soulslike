@@ -10,6 +10,8 @@ void AnimatorComponent::Update()
 
 void AnimatorComponent::SetAnimation(const std::string& _animName, bool _isLoop)
 {
+	OutputDebugStringA("ChangeAnim\n");
+
 	if (auto model = m_wpModelWork.lock())
 	{
 		m_animator.SetAnimation(model->GetAnimation(_animName), _isLoop);

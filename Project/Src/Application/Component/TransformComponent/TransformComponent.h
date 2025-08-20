@@ -15,6 +15,8 @@ public:
 
 	void SetScale(Math::Vector3 _scale) { m_scale = _scale; }
 
+	void SetRotation(Math::Vector3 _rotation) { m_rotation = _rotation; }
+
 	const Math::Vector3& GetPosition()const { return m_position; }
 
 	Math::Matrix GetMatrix()const

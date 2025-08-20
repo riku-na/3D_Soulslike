@@ -121,6 +121,9 @@
     <Filter Include="Src\Application\Utility">
       <UniqueIdentifier>{79f2481e-6096-4cb3-b8c7-5fa47f739034}</UniqueIdentifier>
     </Filter>
+    <Filter Include="Src\Application\Component\StateMachineComponent">
+      <UniqueIdentifier>{d3267b63-d0b8-4fce-b506-fa1197648b43}</UniqueIdentifier>
+    </Filter>
   </ItemGroup>
   <ItemGroup>
     <ClInclude Include="src\Pch.h">
@@ -348,6 +351,9 @@
     <ClInclude Include="Src\Application\Utility\Utility.h">
       <Filter>Src\Application\Utility</Filter>
     </ClInclude>
+    <ClInclude Include="Src\Application\Component\StateMachineComponent\StateMachineComponent.h">
+      <Filter>Src\Application\Component\StateMachineComponent</Filter>
+    </ClInclude>
   </ItemGroup>
   <ItemGroup>
     <ClCompile Include="src\Pch.cpp">
@@ -517,6 +523,9 @@
     </ClCompile>
     <ClCompile Include="Src\Framework\Shader\SkyBoxShader\SkyboxShader.cpp">
       <Filter>Src\Framework\Shader\SkyboxShader</Filter>
+    </ClCompile>
+    <ClCompile Include="Src\Application\Component\StateMachineComponent\StateMachineComponent.cpp">
+      <Filter>Src\Application\Component\StateMachineComponent</Filter>
     </ClCompile>
   </ItemGroup>
   <ItemGroup>
